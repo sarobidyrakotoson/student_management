@@ -1,4 +1,14 @@
 let mongoose = require('mongoose');
+const mongoURI = 'mongodb+srv://sarobidy:NSXeIUL9vtaUMpyy@cluster0.ypcx6va.mongodb.net/ecole?retryWrites=true&w=majority';
+
+mongoose.connect(mongoURI)
+    .then(() => {
+        console.log("Connexion réussie à MongoDB Atlas");
+    })
+    .catch((error) => {
+        console.error("Erreur de connexion à MongoDB Atlas :", error);
+    });
+
 let Schema = mongoose.Schema;
 
 let StudentSchema = Schema({
