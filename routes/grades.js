@@ -10,7 +10,22 @@ function getAll(req, res) {
         res.send(err);
     });
 }
-
+function createMany(req, res) {
+    const gradesData = req.body; 
+  
+    if (!Array.isArray(gradesData)) {
+      return res.status(400).send('Le corps de la requête doit être un tableau de grades.');
+    }
+  
+    Grade.insertMany(gradesData)
+      .then((grades) => {
+        res.json({ message: `${grades.length} grades enregistrées avec succès !`, ids: grades.map(grade => grade._id) });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(400).send('Erreur lors de l\'enregistrement des grades ', err.message);
+      });
+  }
 
 function create(req, res) {
     let grade = new Grade();
@@ -30,4 +45,4 @@ function create(req, res) {
     });
 }
 
-module.exports = {getAll, create};
+module.exports = {getAll, create, createMany};

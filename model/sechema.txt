@@ -1,27 +1,85 @@
-
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://<db_username>:<db_password>@cluster0.ypcx6va.mongodb.net/?appName=Cluster0";
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
+[{
+    "student": "67f790e965b74c62c5392225",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 76,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7910765b74c62c5392228",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 59,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7911065b74c62c539222a",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 89,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7911765b74c62c539222c",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 99,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7bc2a65b74c62c539225e",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 48,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7bc3b65b74c62c5392260",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 58,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7bc4b65b74c62c5392262",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 78,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7bc5865b74c62c5392264",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 75,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7bc6a65b74c62c5392266",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 75,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7bc7b65b74c62c5392268",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 86,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7bc9b65b74c62c539226a",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 85,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7bcab65b74c62c539226c",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 96,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7bcbf65b74c62c539226e",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 85,
+    "date": "2025-04-06"
+  },
+  {
+    "student": "67f7bcc365b74c62c5392270",
+    "course": "67f80c0ab3fd44c39bf52e03",
+    "grade": 85,
+    "date": "2025-04-06"
   }
-});
-
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
-mongodb+srv://sarobidy:<db_password>@cluster0.ypcx6va.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+]
